@@ -49,7 +49,20 @@ cd Integra-Livros
    ```
 
 3. Execute o script no Workbench para criar o banco `integra_livro` e as tabelas necessárias.
-
+4. Configurando os acessos de usuario do mysql dentro do back-end:
+   
+   Caminho do arquivo:  
+   ```
+   projeto-integra-livro/IntegraLivro/src/main/resources/application
+   ```
+5. Abra o arquivo: application, dentro dele vão ter as linhas:
+   ```
+   spring.datasource.username=usuario
+   ```
+   ```
+   spring.datasource.password=senha
+   ```
+6. Nessas linhas adicione o seu usuario e senha do mysql
 ---
 
 ## 🚀 Executando o servidor
