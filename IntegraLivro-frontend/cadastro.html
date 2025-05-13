@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerenciador de Livros</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Sistema Integra Livros</h1>
+            <button id="toggleThemeBtn">Trocar Tema</button>
+        </header>
+
+        <button class="btn" onclick="window.location.href='index.html'">Voltar</button>
+        <div class="form-container">
+            <h2 id="cadastroLivroTitulo" class="collapsible">Cadastrar/Editar Livro</h2>
+            <div class="form-content">
+                <input type="text" id="tituloInput" placeholder="Título" />
+                <input type="text" id="isbnInput" placeholder="ISBN" />
+                <input type="number" id="anoInput" placeholder="Ano de Publicação" />
+
+                <select id="autorInput">
+                    <option value="">Selecione o Autor</option>
+                </select>
+
+                <select id="editoraInput">
+                    <option value="">Selecione a Editora</option>
+                </select>
+
+                <select id="categoriaInput">
+                    <option value="">Selecione a Categoria</option>
+                </select>
+
+                <select id="usuarioInput">
+                    <option value="">Selecione o Usuário</option>
+                </select>
+
+                <select id="statusInput">
+                    <option value="DISPONIVEL">Disponível</option>
+                    <option value="EMPRESTADO">Emprestado</option>
+                </select>
+
+                <label for="capaInput">URL da Capa:</label>
+                <input type="text" id="capaInput" name="capa">
+
+
+                <button onclick="addBook()">Cadastrar Livro</button>
+                <button onclick="saveBook()">Salvar Livro</button>
+            </div>
+        </div>
+
+        <div class="form-container">
+            <h2 class="collapsible">Cadastrar Usuário</h2>
+            <div class="form-content">
+            <input type="text" id="usuarioNomeInput" placeholder="Nome" />
+            <input type="text" id="cpfRgInput" placeholder="RG ou CPF" />
+            <input type="text" id="enderecoInput" placeholder="Endereço" />
+            <input type="tel" id="telInput" placeholder="Telefone" />
+            <button onclick="addUsuario()">Adicionar Usuário</button>
+            </div>
+        </div>
+
+        <!-- Gerenciamento de Autor -->
+        <div class="form-container">
+            <h2 class="collapsible">Cadastrar Autor</h2>
+            <div class="form-content">
+            <input type="text" id="autorNomeInput" placeholder="Nome do Autor" />
+            <button onclick="addAutor()">Adicionar Autor</button>
+            </div>
+        </div>
+
+        <!-- Gerenciamento de Editora -->
+        <div class="form-container">
+            <h2 class="collapsible">Cadastrar Editora</h2>
+            <div class="form-content">
+            <input type="text" id="editoraNomeInput" placeholder="Nome da Editora" />
+            <button onclick="addEditora()">Adicionar Editora</button>
+            </div>
+        </div>
+
+        <!-- Gerenciamento de Categoria -->
+        <div class="form-container">
+            <h2 class="collapsible">Cadastrar Categoria</h2>
+            <div class="form-content">
+            <input type="text" id="categoriaNomeInput" placeholder="Nome da Categoria" />
+            <button onclick="addCategoria()">Adicionar Categoria</button>
+            </div>
+        </div>
+
+        <h2 class="collapsible">Livros</h2>
+        <section id="cardContainer" class="card-container"></section>
+        <!-- Formulário de Edição de Livro -->
+
+
+    </div>
+
+    <div style="display: none;" id="categoriaList"></div>
+    <div style="display: none;" id="editoraList"></div>
+    <div style="display: none;" id="usuarioList"></div>
+    <div style="display: none;" id="autorList"></div>
+
+
+    <div id="feedback" class="feedback hidden"></div>
+
+    <script defer src="./js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerenciador de Livros</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sistema Integra Livros</h1>
+            <button id="toggleThemeBtn">Trocar Tema</button>
+        </header>
+        <button class="btn" onclick="window.location.href='index.html'">Voltar</button>
+        <!-- Gerenciamento de Autor -->
+        <div class="form-container">
+            <div id="autorList"></div>
+        </div>
+
+        <!-- Gerenciamento de Editora -->
+        <div class="form-container">
+            <div id="editoraList"></div>
+        </div>
+
+        <!-- Gerenciamento de Categoria -->
+        <div class="form-container">
+            <div id="categoriaList"></div>
+        </div>
+
+        <div class="form-container">
+            <div id="usuarioList"></div>
+        </div>
+
+        <h2>Livros</h2>
+        <section id="cardContainer" class="card-container"></section>
+    </div>
+
+    <div id="feedback" class="feedback hidden"></div>
+    
+    <script src="./js/script.js"></script>
+</body>
+</html>

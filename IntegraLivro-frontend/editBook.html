@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Livro</title>
+</head>
+<body>
+    <h2>Editar Livro</h2>
+
+    <form id="editForm">
+        <label for="tituloInput">Título:</label>
+        <input type="text" id="tituloInput" /><br>
+
+        <label for="autorInput">Autor:</label>
+        <select id="autorInput"></select><br>
+
+        <label for="editoraInput">Editora:</label>
+        <select id="editoraInput"></select><br>
+
+        <label for="categoriaInput">Categoria:</label>
+        <select id="categoriaInput"></select><br>
+
+        <label for="usuarioInput">Usuário:</label>
+        <select id="usuarioInput">
+            <option value="">Selecione um usuário (opcional)</option>
+        </select><br>
+
+        <label for="anoInput">Ano:</label>
+        <input type="text" id="anoInput" /><br>
+
+        <label for="statusInput">Status:</label>
+        <input type="text" id="statusInput" /><br>
+
+        <label for="isbnInput">ISBN:</label>
+        <input type="text" id="isbnInput" /><br>
+
+        <label for="capaInput">Capa:</label>
+        <input type="text" id="capaInput" /><br>
+
+        <button type="button" onclick="saveBook()">Salvar</button>
+        <button type="button" onclick="cancelEdit()">Cancelar</button>
+    </form>
+
+    <script>
+        // Obter o ID do livro da URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const bookId = urlParams.get('id');
+
+        // Função para carregar os dados do livro
+        async function carregarDadosLivro() {
+            const response = await fetch(`http://localhost:8080/api/livros/${Id}`);
+            const livro = await response.json();
+
+            // Preencher os campos com os dados do livro
+            document.getElementById('tituloInput').value = livro.titulo;
+            document.getElementById('anoInput').value = livro.anoPublicacao;
+            document.getElementById('statusInput').value = livro.status;
+            document.getElementById('isbnInput').value = livro.isbn;
+            document.getElementById('capaInput').value = livro.capa;
+
+            // Outros campos (Autor, Editora, Categoria, etc.) você preenche de forma similar
+        }
+
+        // Chama a função para carregar os dados ao carregar a página
+        window.onload = carregarDadosLivro;
+    </script>
+</body>
+</html>

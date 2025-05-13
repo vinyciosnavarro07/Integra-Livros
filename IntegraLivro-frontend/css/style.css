@@ -1,0 +1,276 @@
+/* Estilos de caixa e espaçamento */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+#toggleThemeBtn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#toggleThemeBtn:hover {
+    background-color: #0056b3;
+}
+
+/* Formulário */
+.form-container {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.form-container h2 {
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+/* Input styles */
+.form-container input[type="text"],
+.form-container input[type="tel"],
+.form-container input[type="email"],
+.form-container input[type="number"],
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* Estilo das seções de autor, editora e categoria */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group.collapsed {
+    display: none;
+}
+
+.input-group h3 {
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+/* Cartões de contato */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card img {
+    
+}
+
+.card h3 {
+    margin-bottom: 5px;
+}
+
+.card p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Tema escuro */
+body.dark {
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+}
+
+body.dark .form-container,
+body.dark .card {
+    background-color: #2c2c2c;
+}
+
+body.dark input,
+body.dark .form-container button,
+body.dark .card p {
+    color: #f5f5f5;
+    background-color: #444;
+    border-color: #666;
+}
+
+body.dark .checkbox-label {
+    color: #f5f5f5;
+}
+
+body.dark #toggleThemeBtn {
+    background-color: #555;
+}
+
+body.dark #toggleThemeBtn:hover {
+    background-color: #777;
+}
+
+.feedback {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background-color: #28a745; /* verde para sucesso */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.feedback.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.feedback.hidden {
+    display: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #004080;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+h1 {
+    margin: 0;
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+input, select, button {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #004080;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #002f66;
+}
+
+.feedback {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 6px;
+    background-color: #d4edda;
+    color: #155724;
+    display: none;
+}
+
+.feedback.show {
+    display: block;
+}
+
+.card-container {
+    margin-top: 20px;
+}
+
+.txt-center{
+    text-align: center;
+}
+
+.book-cover {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.form-content {
+    display: none;
+    margin-top: 10px;
+}
+
+.form-container.open .form-content {
+    display: block;
+}
+
+.form-container h2 {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #0ca740;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
